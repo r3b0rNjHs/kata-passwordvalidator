@@ -37,17 +37,8 @@ namespace PasswordValidator
 
         private bool IsValid(string password)
         {
-            if (password.Length < 6)
-            {
-                return false;
-            }
 
-            if (password.ToLower().Equals(password))
-            {
-                return false;
-            }
-
-            if (password.ToUpper().Equals(password))
+            if (password.Length < 6 || password.ToLower().Equals(password) || password.ToUpper().Equals(password))
             {
                 return false;
             }
