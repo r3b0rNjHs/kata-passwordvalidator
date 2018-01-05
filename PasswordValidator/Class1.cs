@@ -29,6 +29,12 @@ namespace PasswordValidator
             IsValid("ABC4_S").Should().BeFalse();
         }
 
+        [Fact]
+        public void deny_if_doesnt_use_uppercase()
+        {
+            IsValid("abc4_s").Should().BeFalse();
+        }
+
         private bool IsValid(string password)
         {
             if (password.Length < 6)
