@@ -42,6 +42,11 @@ namespace PasswordValidator
                 return false;
             }
 
+            if (password.ToLower().Equals(password))
+            {
+                return false;
+            }
+
             if (password.ToUpper().Equals(password))
             {
                 return false;
