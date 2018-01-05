@@ -12,12 +12,12 @@ namespace PasswordValidator
     {
 
         [Fact]
-        public void IsValid()
+        public void validate_all_password_requirements()
         {
-            Validate("Abc4_s").Should().BeTrue();
+            IsValid("Abc4_s").Should().BeTrue();
         }
 
-        private bool Validate(string password)
+        private bool IsValid(string password)
         {
             if (password.Length < 6)
             {
