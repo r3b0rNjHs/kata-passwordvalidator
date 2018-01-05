@@ -35,6 +35,12 @@ namespace PasswordValidator
             {
                 return false;
             }
+
+            if (password.ToUpper().Equals(password))
+            {
+                return false;
+            }
+
             return true;
         }
     }
