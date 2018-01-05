@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Xunit;
@@ -10,9 +11,8 @@ namespace PasswordValidator
 {
     public class PasswordValidatorShould
     {
-
         [Fact]
-        public void validate_all_password_requirements()
+        public void Validate_all_password_requirements()
         {
             IsValid("Abc4_s").Should().BeTrue();
         }
@@ -43,8 +43,12 @@ namespace PasswordValidator
 
         private bool IsValid(string password)
         {
-
             if (password.Length < 6 || password.ToLower().Equals(password) || password.ToUpper().Equals(password))
+            {
+                return false;
+            }
+
+            if (Regex.Replace(password, "[0-9]", "").Equals(password))
             {
                 return false;
             }
