@@ -17,6 +17,12 @@ namespace PasswordValidator
             IsValid("Abc4_s").Should().BeTrue();
         }
 
+        [Fact]
+        public void deny_lenghts_shorter_than_6()
+        {
+            IsValid("Abc4_").Should().BeFalse();
+        }
+
         private bool IsValid(string password)
         {
             return true;
