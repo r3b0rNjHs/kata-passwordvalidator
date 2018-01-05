@@ -35,6 +35,12 @@ namespace PasswordValidator
             IsValid("abc4_s").Should().BeFalse();
         }
 
+        [Fact]
+        public void deny_if_doesnt_use_number()
+        {
+            IsValid("abcD_s").Should().BeFalse();
+        }
+
         private bool IsValid(string password)
         {
 
