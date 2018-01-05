@@ -12,14 +12,18 @@ namespace PasswordValidator
     {
 
         [Fact]
-        public void isvalid()
+        public void IsValid()
         {
             Validate("Abc4_s").Should().BeTrue();
         }
 
         private bool Validate(string password)
         {
-            return false;
+            if (password.Length < 6)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
