@@ -23,6 +23,12 @@ namespace PasswordValidator
             IsValid("Abc4_").Should().BeFalse();
         }
 
+        [Fact]
+        public void deny_if_doesnt_use_lowercase()
+        {
+            IsValid("ABC4_S").Should().BeFalse();
+        }
+
         private bool IsValid(string password)
         {
             if (password.Length < 6)
