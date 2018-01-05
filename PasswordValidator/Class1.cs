@@ -41,6 +41,12 @@ namespace PasswordValidator
             IsValid("abcD_s").Should().BeFalse();
         }
 
+        [Fact]
+        public void deny_if_doesnt_use_underscore()
+        {
+            IsValid("abcD4s").Should().BeFalse();
+        }
+
         private bool IsValid(string password)
         {
             if (password.Length < 6 || password.ToLower().Equals(password) || password.ToUpper().Equals(password))
