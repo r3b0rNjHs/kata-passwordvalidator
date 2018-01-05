@@ -19,10 +19,6 @@ namespace PasswordValidator
 
         private bool IsValid(string password)
         {
-            if (password.Length < 6)
-            {
-                return false;
-            }
             return true;
         }
     }
