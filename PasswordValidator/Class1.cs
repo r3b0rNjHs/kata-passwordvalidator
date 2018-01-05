@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PasswordValidator
 {
-    public class Class1
+    public class PasswordValidatorShould
     {
+
     }
 }
